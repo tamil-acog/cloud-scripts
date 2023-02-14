@@ -9,7 +9,7 @@ sync_to_box()
     if ssh storagebox ls /home | grep -q -i ${storage_id} ; then
       e_success "Your storage_id exists"
       e_arrow "Uploading the files to the storagebox"
-      a=$(ssh storagebox ls /home/tamil | tail -1 | tail -c 2)
+      a=$(ssh storagebox ls /home/${storage_id} | tail -1 | tail -c 2)
       file_num=$(( ${a} + 1))
       input=$(echo "project_$file_num")
       rsync -avz ${directory} storagebox:/home/${storage_id}/${input} 2>&1 >/dev/null

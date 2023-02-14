@@ -36,11 +36,11 @@ def download(storage_id: str, directory: str, project_id: str) -> None:
 def run(storage_id: str, project_id: str, docker_image: str, command: str, machine: str) -> None:
     os.chdir(main_dir)
     variable = {}
-    variable['user_input'] = {"storage_id": storage_id, "project_id": project_id, "docker_image": docker_image, "command": command}
+    variable['user_input'] = {"storage_id": storage_id, "project_id": project_id, "docker_image": docker_image, "command": command, "machine_type": machine}
     variable['server_type'] = machine
-    variable['vm_name'] = storage_id + str(random.randint(1, 100))
-    variable['primary_ip_name'] = storage_id + str(random.randint(101, 200))
-    variable['ssh_name'] = storage_id + str(random.randint(201, 300))
+    variable['machine_name'] = storage_id + str(random.randint(1, 100))
+    variable['ip_name'] = storage_id + str(random.randint(101, 200))
+    variable['ssh_key_name'] = storage_id + str(random.randint(201, 300))
     json_object = json.dumps(variable, indent = 4)
     with open("variables.tfvars.json", "w") as f:
         f.write(json_object)

@@ -1,5 +1,6 @@
 #!/bin/bash
 mkdir -p /root/metadata
+mkdir -p /root/.ssh/storagebox
 lshw -short > /root/metadata/machine_info.txt
 uname -a >> /root/metadata/machine_info.txt
 cat /etc/*-release >> /root/metadata/machine_info.txt
@@ -22,7 +23,9 @@ echo "                                DOCKER INSTALLATION COMPLETED AND LOGGED I
 echo "##############################################################################################">>/root/metadata/metadata.txt
 
 
-chmod 400 ~/.ssh/id_rsa
+chmod 400 /root/.ssh/id_rsa
+mv /root/id_rsa /root/.ssh/storagebox/id_rsa
+chmod 400 /root/.ssh/storagebox/id_rsa
 
 rsync -avzP storagebox:/home/$1/$2/ /root/input/
 chmod 777 /root/input/*
