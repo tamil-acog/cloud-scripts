@@ -1,0 +1,11 @@
+#cloud-config
+
+package_upgrade: false
+users:
+  - name: root
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLiZVF/U8Xfohs3rhj8o2n3LSMzembzsGNSqpaRCh0yZbI10BWeTPAq+8yRY5ZLgDWhB2HVRYUZWTFAlHUH73BT/ftq3cjpJ5VKrMflamTM4M5d412/a5TMoUA2K0JbJeo0WKPY9KDPwxWowcHq1Pzvwc8W9IYoLQJhTNM/ctEwgTDLXT50SCERmfnIkKkvf2hqnq2srPKmhPG6J3A1N43wndms4Zucb04OFXoxy8PAXmo2Fg1B/2cVVF2n1a12ni/IucQ0puga3gwrKLsbER7+96PitF/naBLDJ0tlE4Uv115k9s+p997yqHD4Jx6ubvv+IRHy+at7aH7tJ4/SqFTn2QBvKxnS86u8y1pQj8vusNkIuKwMx552fTdtZA4PGTPs1C/ZArsloy/LjV/3FMy8uxy9Hmbk6YxeDywuWgWUXhQ1JeErFYgqQ8ySrcbNmaQz3NU6g+vNh5MI3ZWG9XHkNLvAV85WjriN7Q44lZ0f/o++VivdWxsdu6+gXC5XRk= tamil@TamilAir.aganitha.ai
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+
+  
+  
